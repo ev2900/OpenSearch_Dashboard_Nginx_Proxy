@@ -70,3 +70,7 @@ To access the OpenSearch dashboard ensure that the ec2 security group will accep
 Your web browser may flag the website as insecure. This is because we are using a self-signed SSL certificate instead of a SSL certificate signed by a trusted authority. Procced to the website. You will see the OpenSearch dashboard log in page.
 
 <img width="550" alt="log_in" src="https://user-images.githubusercontent.com/5414004/182025931-a0acec68-452f-441c-98f2-a091cfb04091.png">
+
+## Future Improvement(s)
+1. Containerize Nginx server
+2. High availability Nginx server (ie. two servers behind an elastic load balancer) 
