@@ -17,7 +17,9 @@ The resources created by the CloudFormation stack are documented in the architec
 
 2. Install NGINX on Ec2
 
-SSH into the Ec2 that was created by the cloudformation and run the following commands on the terminal. *Note* you will need to update the ec2 security group to allow incoming traffic from your IP address before you can SSH into the Ec2 instance.
+SSH into the Ec2 that was created by the cloudformation and run the following commands on the terminal. 
+
+*Note* you will need to update the ec2 security group to allow incoming traffic from your IP address before you can SSH into the Ec2 instance.
 
 ```sudo apt update```
 
