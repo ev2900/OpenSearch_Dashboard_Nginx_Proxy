@@ -65,7 +65,7 @@ If you need to stop or start Nginx issue the commands below as needed
 
 5. Access OpenSearch dashboard via. public internet
 
-To access the OpenSearch dashboard ensure that the ec2 security group will accept incoming traffic for your source. In a web browser navigate to https://<ec2's-public-ip>/_dashboards*
+To access the OpenSearch dashboard ensure that the ec2 security group will accept incoming traffic for your source. In a web browser navigate to https://<ec2's-public-ip>/_dashboards
 
 Your web browser may flag the website as insecure. This is because we are using a self-signed SSL certificate instead of a SSL certificate signed by a trusted authority. Procced to the website. You will see the OpenSearch dashboard log in page.
 
