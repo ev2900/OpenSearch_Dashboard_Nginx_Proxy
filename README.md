@@ -15,46 +15,52 @@ The resources created by the CloudFormation stack are documented in the architec
 
 <img alt="opensearch_nginx_yaml" src="https://github.com/ev2900/OpenSearch_Dashboard_Nginx_Proxy/blob/main/Read_Me_Architecture/ReadMe_Architecture.png">
 
-# Install NGINX
+2. Install NGINX on Ec2
 
-sudo apt update
-sudo apt install nginx
+SSH into the Ec2 that was created by the cloudformation and run the following commands on the terminal
 
-## SSL 
+```sudo apt update```
 
-cd /etc/nginx/
+```sudo apt install nginx```
 
-# Private key
+## Create SSL self-signed certificate
 
-sudo openssl genrsa -des3 -out /etc/nginx/private.key 2048
+The OpenSearch dashboard URL uses https. Conseqently we need to have SSL enabled in our Nginx proxy. We will will generate a self-signed certificate to use as part of our SSL configuration.
 
-# Public key
+Run the following commands on the terminal of the Ec2 created by the cloudformation
 
-sudo openssl rsa -in private.key -out public.key
+```cd /etc/nginx/```
 
-# CSR
+```sudo openssl genrsa -des3 -out /etc/nginx/private.key 2048```
 
-sudo openssl req -new -key public.key -out certificate_signing_request.csr
+```sudo openssl rsa -in private.key -out public.key```
 
-# CRT
+```sudo openssl req -new -key public.key -out certificate_signing_request.csr```
 
-sudo openssl x509 -req -days 365 -in certificate_signing_request.csr -signkey public.key -out self_signed_certificate.crt
+```sudo openssl x509 -req -days 365 -in certificate_signing_request.csr -signkey public.key -out self_signed_certificate.crt```
 
-# NGIX 
+3. Configure Nginx 
 
-cd sites-enabled
+Run the following commands on the terminal of the Ec2 created by the cloudformation
 
-sudo vim default
+```cd sites-enabled```
 
-*Replace the content of the default file*
+```sudo vim default```
 
-sudo service nginx restart
+Delete all of the content of the default. 
 
-# If needed ... 
+4. Restart / start Nginx
 
-sudo service nginx start
-sudo service nginx stop
+Restart the Nginx service to have the changes made to the configuration take effect. Run the following commands on the terminal of the Ec2 created by the cloudformation
 
-# Dashboard
+```sudo service nginx restart```
+
+If you need to stop or start Nginx issue the commands below as needed
+
+```sudo service nginx start```
+
+```sudo service nginx stop```
+
+5. Access OpenSearch dashboard via. public internet
 
 *In your web-browser go to https://<ec2's-public-ip>/_dashboards*
