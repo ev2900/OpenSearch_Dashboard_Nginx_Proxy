@@ -1,5 +1,20 @@
 # OpenSearch Dashboard Nginx Proxy
 
+Amazon OpenSearch services can deploy a domain in a private VPC, subnet(s). Deploying OpenSearch in a private subnet blocks traffic to the OpenSearch dashboard via. the public internet.
+
+A Nginx proxy can be configured on an Ec2 in a public subnet (in the same VPC as the private subnet) to proxy traffic to the OpenSearch dashboard. **Enabling you to have a OpenSearch domain deployed in a private subnet with a OpenSearch dashboard accessable from the public internet**
+
+Follow the instructions below
+
+1. Run the CloudFormation stack below
+
+
+
+The resources created by the CloudFormation stack are documented in the architecture below
+
+
+
+
 # Install NGINX
 
 sudo apt update
