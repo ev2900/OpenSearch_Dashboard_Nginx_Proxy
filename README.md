@@ -8,12 +8,12 @@ Follow the instructions below
 
 1. Run the CloudFormation stack below
 
-
+[![Launch CloudFormation Stack](https://sharkech-public.s3.amazonaws.com/misc-public/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=os-nginx&templateURL=https://sharkech-public.s3.amazonaws.com/misc-public/opensearch_nginx.yaml)
 
 The resources created by the CloudFormation stack are documented in the architecture below
 
 
-
+<img alt="opensearch_nginx_yaml" src="https://github.com/ev2900/OpenSearch_Dashboard_Nginx_Proxy/blob/main/Read_Me_Architecture/ReadMe_Architecture.png">
 
 # Install NGINX
 
