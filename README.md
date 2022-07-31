@@ -1,1 +1,1 @@
-# OpenSearch_Dashboard_Nginx_Proxy
+# OpenSearch Dashboard Nginx Proxy
