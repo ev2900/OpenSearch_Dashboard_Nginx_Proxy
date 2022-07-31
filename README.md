@@ -2,7 +2,7 @@
 
 Amazon OpenSearch services can deploy a domain in a private VPC, subnet(s). Deploying OpenSearch in a private subnet blocks traffic to the OpenSearch dashboard via. the public internet.
 
-A Nginx proxy can be configured on an Ec2 in a public subnet (in the same VPC as the private subnet) to proxy traffic to the OpenSearch dashboard. **Enabling you to have a OpenSearch domain deployed in a private subnet with a OpenSearch dashboard accessable from the public internet**
+A Nginx proxy can be configured on an Ec2 in a public subnet (in the same VPC as the private subnet) to proxy traffic to the OpenSearch dashboard. **Enabling you to have a OpenSearch domain deployed in a private subnet with a OpenSearch dashboard accessible from the public internet**
 
 Follow the instructions below
 
@@ -25,7 +25,7 @@ SSH into the Ec2 that was created by the cloudformation and run the following co
 
 ## Create SSL self-signed certificate
 
-The OpenSearch dashboard URL uses https. Conseqently we need to have SSL enabled in our Nginx proxy. We will will generate a self-signed certificate to use as part of our SSL configuration.
+The OpenSearch dashboard URL uses https. Consequently we need to have SSL enabled in our Nginx proxy. We will generate a self-signed certificate to use as part of our SSL configuration.
 
 Run the following commands on the terminal of the Ec2 created by the cloudformation
 
@@ -63,4 +63,8 @@ If you need to stop or start Nginx issue the commands below as needed
 
 5. Access OpenSearch dashboard via. public internet
 
-*In your web-browser go to https://<ec2's-public-ip>/_dashboards*
+To access the OpenSearch dashboard ensure that the ec2 security group will accept incoming traffic for your source. In a web browser navigate to https://<ec2's-public-ip>/_dashboards*
+
+Your web browser may flag the website as insecure. This is because we are using a self-signed SSL certificate instead of a SSL certificate signed by a trusted authority. Procced to the website. You will see the OpenSearch dashboard log in page.
+
+<img width="454" alt="log_in" src="https://user-images.githubusercontent.com/5414004/182025931-a0acec68-452f-441c-98f2-a091cfb04091.png">
