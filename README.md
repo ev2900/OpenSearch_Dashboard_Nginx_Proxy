@@ -47,7 +47,7 @@ Run the following commands on the terminal of the Ec2 created by the cloudformat
 
 ```sudo vim default```
 
-Delete all of the content of the default. 
+Delete all of the content in the default file. Update the 3 <os_domain_url> placeholders in the [ngnix_config](https://github.com/ev2900/OpenSearch_Dashboard_Nginx_Proxy/blob/main/ngnix_config) file. Copy/past the updated [ngnix_config](https://github.com/ev2900/OpenSearch_Dashboard_Nginx_Proxy/blob/main/ngnix_config) into the default file. Save and close the default file.
 
 4. Restart / start Nginx
 
