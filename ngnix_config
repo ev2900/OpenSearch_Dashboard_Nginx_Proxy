@@ -14,10 +14,13 @@ server {
 
     location ^~ /_dashboards {
         # Forward requests to Dashboards
-        proxy_pass https://vpc-workshop-domain-vpc-sanhsxgdhgmlm3ipovjzmbivse.us-east-1.es.amazonaws.com/_dashboards;
+        # proxy_pass https://vpc-workshop-domain-vpc-sanhsxgdhgmlm3ipovjzmbivse.us-east-1.es.amazonaws.com/_dashboards;
+        proxy_pass https://<os_domain_url>/_dashboards;
+
 
         # Update cookie domain and path
-        proxy_cookie_domain vpc-workshop-domain-vpc-sanhsxgdhgmlm3ipovjzmbivse.us-east-1.es.amazonaws.com $host;
+        # proxy_cookie_domain vpc-workshop-domain-vpc-sanhsxgdhgmlm3ipovjzmbivse.us-east-1.es.amazonaws.com $host;
+        proxy_cookie_domain <os_domain_url> $host;
 
         proxy_set_header Accept-Encoding "";
         sub_filter_types *;
@@ -33,6 +36,7 @@ server {
     location ~ \/(log|sign|fav|forgot|change|saml|oauth2) {
 
         # Handle redirects to Dashboards
-        proxy_redirect https://vpc-workshop-domain-vpc-sanhsxgdhgmlm3ipovjzmbivse.us-east-1.es.amazonaws.com https://$host;
+        # proxy_redirect https://vpc-workshop-domain-vpc-sanhsxgdhgmlm3ipovjzmbivse.us-east-1.es.amazonaws.com https://$host;
+        proxy_redirect https://<os_domain_url> https://$host;
     }
 }
