@@ -1,6 +1,6 @@
 # OpenSearch Dashboard Nginx Proxy
 
-<img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-0-blue">
+<img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-79-blue">
 
 Amazon OpenSearch services can deploy a domain in a private VPC, subnet(s). Deploying OpenSearch in a private subnet blocks traffic to the OpenSearch dashboard via. the public internet.
 
@@ -19,7 +19,7 @@ The resources created by the CloudFormation stack are documented in the architec
 
 2. Install NGINX on Ec2
 
-SSH into the Ec2 that was created by the cloudformation and run the following commands on the terminal. 
+SSH into the Ec2 that was created by the cloudformation and run the following commands on the terminal.
 
 *Note* you will need to update the ec2 security group to allow incoming traffic from your IP address before you can SSH into the Ec2 instance.
 
@@ -43,7 +43,7 @@ Run the following commands on the terminal of the Ec2 created by the cloudformat
 
 ```sudo openssl x509 -req -days 365 -in certificate_signing_request.csr -signkey public.key -out self_signed_certificate.crt```
 
-3. Configure Nginx 
+3. Configure Nginx
 
 Run the following commands on the terminal of the Ec2 created by the cloudformation
 
@@ -75,4 +75,4 @@ Your web browser may flag the website as insecure. This is because we are using 
 
 ## Future Improvement(s)
 1. Containerize Nginx server
-2. High availability Nginx server (ie. two servers behind an elastic load balancer) 
+2. High availability Nginx server (ie. two servers behind an elastic load balancer)
