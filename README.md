@@ -43,9 +43,9 @@ Run the following commands on the terminal of the Ec2 created by the cloudformat
 
 ```sudo openssl x509 -req -days 365 -in certificate_signing_request.csr -signkey public.key -out self_signed_certificate.crt```
 
-3. Configure Nginx
+## Configure Nginx
 
-Run the following commands on the terminal of the Ec2 created by the cloudformation
+1. Run the following commands on the terminal of the Ec2 created by the cloudformation
 
 ```cd sites-enabled```
 
@@ -53,7 +53,7 @@ Run the following commands on the terminal of the Ec2 created by the cloudformat
 
 Delete all of the content in the default file. Update the 3 <os_domain_url> placeholders in the [ngnix_config](https://github.com/ev2900/OpenSearch_Dashboard_Nginx_Proxy/blob/main/ngnix_config) file. Copy/past the updated [ngnix_config](https://github.com/ev2900/OpenSearch_Dashboard_Nginx_Proxy/blob/main/ngnix_config) into the default file. Save and close the default file.
 
-4. Restart / start Nginx
+2. Restart / start Nginx
 
 Restart the Nginx service to have the changes made to the configuration take effect. Run the following commands on the terminal of the Ec2 created by the cloudformation
 
@@ -65,7 +65,7 @@ If you need to stop or start Nginx issue the commands below as needed
 
 ```sudo service nginx stop```
 
-5. Access OpenSearch dashboard via. public internet
+3. Access OpenSearch dashboard via. public internet
 
 To access the OpenSearch dashboard ensure that the ec2 security group will accept incoming traffic for your source. In a web browser navigate to https://<ec2's-public-ip>/_dashboards
 
