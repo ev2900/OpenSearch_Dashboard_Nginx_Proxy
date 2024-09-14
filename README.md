@@ -1,6 +1,6 @@
 # OpenSearch Dashboard Nginx Proxy
 
-<img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-153-blue"> <img width="85" alt="map-user" src="https://img.shields.io/badge/views-10050-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-2787-green">
+<img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-153-blue"> <img width="85" alt="map-user" src="https://img.shields.io/badge/views-10142-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-2787-green">
 
 Amazon OpenSearch services can deploy a domain in a private VPC, subnet(s). Deploying OpenSearch in a private subnet blocks traffic to the OpenSearch dashboard via. the public internet.
 
